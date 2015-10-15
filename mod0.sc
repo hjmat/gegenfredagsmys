@@ -6,8 +6,8 @@ SynthDef("fmNoiseDrone",
 			ampOsc = SinOsc.kr(0.1, 0, 0.5, 0.5);
 			freqOsc = SinOsc.ar(freq/divider, 0, 0.5, 0.5);
 			noiseOsc = PinkNoise.ar(1);
-			SinOsc.ar(noiseOsc*freqOsc*(0.3 + freq), out, 0.5 + (ampOsc));
+			SinOsc.ar(noiseOsc*freqOsc*(0.3 + freq), out, (0.5 + ampOsc)*amp);
 		);
 }).send(s);
 
-x = Synth("fmNoiseDrone", ["freq", 150, "amp", 2]);
+x = Synth("fmNoiseDrone", ["freq", 150, "amp", 0.5]);
