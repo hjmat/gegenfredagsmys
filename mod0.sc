@@ -24,28 +24,28 @@ SynthDef(\perc,
 		);
 }).send(s);
 
-// Drone
+// mix rumble drone
 Pbind(
 	\instrument, \noiseDrone,
-	\dur, Pseq([1/4, 1/1,1/32], inf),
+	\dur, Pseq([1/4, 1/1, 1/32], inf),
 	\freq, Prand([100, 800, 200, 100], inf)
 ).play(quant: 4);
 
-// Drone 2
+// low rumble drone
 Pbind(
 	\instrument, \noiseDrone,
 	\dur, Pseq([1/1], inf),
 	\freq, Prand([100], inf)
 ).play(quant: 4);
 
-// Kick
+// kick
 Pbind(
 	\instrument, \perc,
 	\dur, Pseq([1/2], inf),
 	\freq, Pseq([100], inf)
 ).play(quant: 4);
 
-// Snare
+// snare
 Pbind(
 	\instrument, \perc,
 	\dur, Prand([21/9, 11/2, 1/32], inf),
